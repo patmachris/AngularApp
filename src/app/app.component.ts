@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PAT-ROB';
-  email: 'sign-up';
+title ='Raclette party';
+
+isThisIngredientVital:boolean = true;
+
+isThisIngredientFilm:boolean = true;
+
+
+displayGuestList:boolean = true;
+
+songList:string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
 }
