@@ -5,19 +5,19 @@
         <label for="user">User</label>
         <input name="user" type="text" [(ngModel)]="model.username" #username="ngModel" required minlength="4" maxlength="25">  
       </div>
-    <div *ngIf="myForm.submitted">
-        <div *ngIf="username.errors">
+    <div *ngIf="myForm.submitted && username.errors">
+        
             <span *ngIf="username.errors.required"> le champs est requis</span>
             <span *ngIf="username.errors.minlength">il me faut au minimu 4 characteres</span>
-        </div>
+        
     </div>
     <div>
         <label for="email">Email</label>
-        <input name="email" type="text" [(ngModel)]="model.emailname" #emailname="ngModel" required minlength="4" maxlength="25" >
+        <input name="email" type="text" [(ngModel)]="model.emailname" #emailname="ngModel" required email >
     </div>
-    <div>
+    <div *ngIf="emailname.errors && myForm.submitted">
         <span *ngIf="emailname.errors.required"> le champs est requis</span>
-        <span *ngIf="emailname.errors.minlength">il me faut au minimu 4 characteres</span>
+        <span *ngIf="emailname.errors.email">L'adresse email doit être valide</span>
 
     </div>
 
