@@ -12,10 +12,18 @@
         </div>
     </div>
     <div>
-        <label for="mail-order">Email</label>
-        <input name="mail-order" type="email" [(ngModel)]="adresseMail">
+        <label for="email">Email</label>
+        <input name="email" type="text" [(ngModel)]="model.emailname" #emailname="ngModel" required minlength="4" maxlength="25" >
+    </div>
+    <div>
+        <span *ngIf="emailname.errors.required"> le champs est requis</span>
+        <span *ngIf="emailname.errors.minlength">il me faut au minimu 4 characteres</span>
+
     </div>
 
+
+
+  
 
     <button type="reset">Restaurer</button>
     <button type="submit">Envoyer</button>
